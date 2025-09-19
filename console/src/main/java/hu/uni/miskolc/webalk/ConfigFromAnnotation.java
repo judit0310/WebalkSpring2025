@@ -13,9 +13,7 @@ public class ConfigFromAnnotation
         ApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 
         HallgatoService service = (HallgatoService) context.getBean("hallgatoService");
-        System.out.println(service.getAllHallgato());
-        Hallgato h = new Hallgato("AAA111", "Nagy Milán", "nagy.milan@pelda.hu", LocalDate.now(), Nem.FERFI);
-        service.addHallgato(h);
-        System.out.println(service.getAllHallgato());
+        System.out.println(service.getHallgatok());
+        System.out.println(service.getHallgatokByNem(Nem.EGYEB));
     }
 }

@@ -13,6 +13,7 @@
     <module>core</module>
     <module>service</module>
     <module>console</module>
+    <module>dao-mongo</module>
   </modules>
 
   <properties>
@@ -26,5 +27,20 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>6.1.14</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>6.1.14</version>
+    </dependency>       <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>6.1.14</version>
+  </dependency>
   </dependencies>
 </project>
