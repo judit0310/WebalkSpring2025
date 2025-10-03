@@ -1,0 +1,16 @@
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="hu.uni.miskolc.webalk.Hallgato" table="hallgato">
+        <id name="neptunKod" type="java.lang.String" column="id" length="6">
+
+        </id>
+        <property name="teljesNev" column="teljes_nev" type="java.lang.String"></property>
+        <property name="email" column="email" type="java.lang.String"></property>
+        <property name="szuletesiDatum" column="szuletesi_datum" type="java.time.LocalDate"/>
+        <property name="nem" column="nem">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">hu.uni.miskolc.webalk.Nem</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+    </class>
+</hibernate-mapping>

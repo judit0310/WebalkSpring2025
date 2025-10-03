@@ -27,7 +27,7 @@ public class HallgatoService {
 
     public void addHallgato(Hallgato hallgato) throws HallgatoMarLetezikException {
         hallgatoDAO.createHallgato(hallgato);
-    }
+     }
 
     public Hallgato getHallgatoByNeptunKod(String neptunKod) throws HallgatoNemTalalhatoException {
         return hallgatoDAO.getHallgatoById(neptunKod);

@@ -14,6 +14,7 @@
     <module>service</module>
     <module>console</module>
     <module>dao-mongo</module>
+    <module>dao-relational</module>
   </modules>
 
   <properties>
@@ -42,5 +43,7 @@
     <artifactId>spring-core</artifactId>
     <version>6.1.14</version>
   </dependency>
+
+
   </dependencies>
 </project>
