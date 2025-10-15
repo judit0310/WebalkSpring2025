@@ -13,6 +13,7 @@ import java.util.List;
 public class MyConfig {
     //Ha itt marad a Bean, akkor kettőt is talál
     @Bean
+    
     public HallgatoDAO getHallgatoDAO() {
         return new HallgatoDAOMongo("mongodb+srv://test:test@ktj.jxln5hy.mongodb.net/?retryWrites=true&w=majority&appName=KTJ",
                 "GUPNWY", "hallgatok");

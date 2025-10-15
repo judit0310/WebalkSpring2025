@@ -7,6 +7,7 @@ import hu.uni.miskolc.webalk.dao.HallgatoDAO;
 import hu.uni.miskolc.webalk.dao.exceptions.HallgatoMarLetezikException;
 import hu.uni.miskolc.webalk.dao.exceptions.HallgatoNemTalalhatoException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -17,7 +18,7 @@ import java.util.List;
 public class HallgatoService {
     private final HallgatoDAO hallgatoDAO;
 
-    public HallgatoService(@Autowired HallgatoDAO hallgatoDAO) {
+    public HallgatoService(@Autowired /*@Qualifier("hallgatoDAORelacios")*/ HallgatoDAO hallgatoDAO) {
         this.hallgatoDAO = hallgatoDAO;
     }
 
@@ -44,5 +45,17 @@ public class HallgatoService {
         }
         return eredmeny;
 
+    }
+
+    public void removeHallgato(Hallgato hallgato) throws HallgatoNemTalalhatoException {
+        hallgatoDAO.deleteHallgato(hallgato.getNeptunKod());
+    }
+
+    public void removeHallgato(String id) throws HallgatoNemTalalhatoException {
+        hallgatoDAO.deleteHallgato(id);
+    }
+
+    public void updateHallgato(Hallgato hallgato){
+        hallgatoDAO.updateHallgato(hallgato);
     }
 }

@@ -1,6 +1,8 @@
 package hu.uni.miskolc.webalk;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 
 public class Hallgato
@@ -12,6 +14,7 @@ public class Hallgato
 
     private String email;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate szuletesiDatum;
 
     private Nem nem;
@@ -57,7 +60,7 @@ public class Hallgato
         return szuletesiDatum;
     }
 
-    public void setSzuletesiDatum(LocalDate szuletesiDatum) {
+    public void setSzuletesiDatum(@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate szuletesiDatum) {
         this.szuletesiDatum = szuletesiDatum;
     }
 

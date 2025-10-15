@@ -18,5 +18,5 @@ public interface HallgatoDAO {
 
     void updateHallgato(Hallgato hallgato);
 
-    void deleteHallgato(String id);
+    void deleteHallgato(String id) throws HallgatoNemTalalhatoException;
 }
