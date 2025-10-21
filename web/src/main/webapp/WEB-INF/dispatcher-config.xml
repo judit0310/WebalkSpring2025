@@ -4,13 +4,20 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <context:component-scan base-package="hu.uni.miskolc.webalk"/>
     <context:annotation-config/>
-<mvc:annotation-driven/>
+    <mvc:annotation-driven/>
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/WEB-INF/views/"/>
     <property name="suffix" value=".jsp"/>
 </bean>
+
+    <bean class="hu.uni.miskolc.webalk.HallgatoDAOMongo" primary="true" >
+        <constructor-arg name="uri"
+                         value="mongodb+srv://test:test@ktj.jxln5hy.mongodb.net/?retryWrites=true&amp;w=majority&amp;appName=KTJ"/>
+        <constructor-arg name="database" value="webalk_2024"/>
+        <constructor-arg name="collection" value="hallgatok"/>
+    </bean>
 
 </beans>

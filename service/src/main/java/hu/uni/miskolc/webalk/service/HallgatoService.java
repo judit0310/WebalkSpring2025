@@ -14,6 +14,8 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class HallgatoService {
     private final HallgatoDAO hallgatoDAO;
@@ -58,4 +60,18 @@ public class HallgatoService {
     public void updateHallgato(Hallgato hallgato){
         hallgatoDAO.updateHallgato(hallgato);
     }
+
+    public List<Hallgato> getHallgatoByVezeteknev(String vezeteknev){
+        return getHallgatok().stream().filter(h -> h.getTeljesNev().startsWith(vezeteknev+" ")).collect(Collectors.toList());
+    }
+
+    public List<Hallgato> getHallgatokKetEvKozott(int from, int to){
+        return getHallgatok().stream().filter(h -> h.getSzuletesiDatum().getYear() >= from && h.getSzuletesiDatum().getYear() <= to).collect(Collectors.toList());
+    }
+
+    public List<Hallgato> getHallgatokNemSzerint(Nem nem){
+        return getHallgatok().stream().filter(h -> h.getNem().equals(nem)).collect(Collectors.toList());
+    }
+
+
 }

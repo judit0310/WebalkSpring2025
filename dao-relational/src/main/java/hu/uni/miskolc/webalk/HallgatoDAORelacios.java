@@ -15,7 +15,7 @@ import javax.persistence.PersistenceException;
 import java.util.List;
 
 @Repository
-@Primary
+//@Primary
 //@Lazy(false)
 public class HallgatoDAORelacios implements HallgatoDAO{
 
@@ -36,7 +36,10 @@ public class HallgatoDAORelacios implements HallgatoDAO{
 
     @Override
     public Hallgato getHallgatoById(String id) throws HallgatoNemTalalhatoException {
-        return null;
+        Session session = sessionFactory.openSession();
+        List<Hallgato> result = session.createQuery("from Hallgato WHERE neptunKod = :id").setString("id",id).list();
+        session.close();
+        return result.get(0);
     }
 
     @Override

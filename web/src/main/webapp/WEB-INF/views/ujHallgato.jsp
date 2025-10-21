@@ -24,25 +24,34 @@
         <legend>Azonosítok</legend>
         <form:label path="neptunKod">Neptun kod:</form:label>
         <form:input path="neptunKod" type="text"/>
+        <form:errors path="neptunKod"></form:errors>
     </fieldset>
     <br>
     <fieldset>
         <legend>Alap adatok</legend>
         <form:label path="teljesNev">Teljes név:</form:label>
         <form:input path="teljesNev" />
+        <form:errors path="teljesNev"></form:errors>
         <br>
         <form:label path="email">Email cím:</form:label>
         <form:input path="email" />
+        <form:errors path="email"></form:errors>
         <br>
         <form:label path="szuletesiDatum" >Születési dátum:</form:label>
         <form:input path="szuletesiDatum" type="date"/>
+        <form:errors path="szuletesiDatum"></form:errors>
         <br>
         <form:label path="nem">Nem:</form:label>
         <form:select path="nem" >
             <form:options/>
         </form:select>
+        <form:errors path="nem"></form:errors>
     </fieldset>
+
+    <c:if test="${method ne 'View'}">
         <input type="submit" value="Hozzáadás">
+
+    </c:if>
 
 
 

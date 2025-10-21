@@ -33,7 +33,7 @@ Hallgatoink.
             <td>${hallgato.teljesNev}</td>
             <td>${hallgato.neptunKod}</td>
             <td>${hallgato.email}</td>
-            <td><i class="fa-solid fa-pen-to-square"></i> </td>
+            <td><i onclick="window.location = '${pageContext.servletContext.contextPath}/updateHallgato/${hallgato.neptunKod}';" class="fa-solid fa-pen-to-square"></i><i onclick="window.location = '${pageContext.servletContext.contextPath}/hallgato/${hallgato.neptunKod}';" class="fa-solid fa-eye"></i>  </td>
         </tr>
     </c:forEach>
 </table>
